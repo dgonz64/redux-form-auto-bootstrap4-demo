@@ -8,7 +8,7 @@ const parts = require('./webpack.parts.babel')
 const root = process.cwd()
 const PATHS = {
   app: path.join(root, 'src'),
-  build: path.join(root, 'build')
+  build: path.join(root, 'demo')
 }
 
 const commonConfig = merge([
@@ -55,13 +55,13 @@ const productionConfig = merge([
     output: {
       chunkFilename: '[name]_[chunkhash:8].bundle.js',
       filename: '[name]_[chunkhash:8].bundle.js',
-      path: path.join(root, 'build')
+      path: PATHS.build
     },
     plugins: [
       new webpack.HashedModuleIdsPlugin(),
     ],
   },
-  parts.htmlPlugin({ filename: 'demo.html' }),
+  parts.htmlPlugin(),
   parts.clean(PATHS.build),
   parts.minifyJavascript(),
   parts.minifyCSS({
@@ -102,7 +102,7 @@ const developmentConfig = merge([
       devtoolModuleFilenameTemplate: 'webpack'
     },
   },
-  parts.htmlPlugin({ filename: 'index.html' }),
+  parts.htmlPlugin(),
   parts.loadSourceMaps(),
   parts.generateSourceMaps({ type: 'inline-source-map' }),
   parts.devServer({

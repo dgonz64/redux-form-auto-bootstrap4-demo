@@ -25,14 +25,11 @@ exports.devServer = ({
   }
 })
 
-exports.htmlPlugin = ({
-  filename
-}) => ({
+exports.htmlPlugin = () => ({
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'redux-form-auto bootstrap3 demo',
+      title: 'redux-form-auto-bootstrap4 demo',
       template: require('html-webpack-template'),
-      filename,
       appMountId: 'root',
       inject: false
     })
