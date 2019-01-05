@@ -3,13 +3,18 @@
 }
 
 .submodel-title {
-  color: #888
+  color: #888;
 }
 
 .error {
-  color: #a44
+  color: #a44;
 }
 
 .demo-title {
-  text-align: center
+  text-align: center;
+  width: 100%;
+}
+
+.card {
+  margin-bottom: 20px;
 }

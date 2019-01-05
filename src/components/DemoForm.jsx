@@ -9,7 +9,12 @@ addTranslations({
       pets: 'Owned pets'
     },
     pet: {
-      name: 'Pet\'s name'
+      name: 'Pet\'s name',
+      type: {
+        _field: 'Kind',
+        dog: 'Dog',
+        cat: 'Cat'
+      }
     }
   },
   add: 'Add'

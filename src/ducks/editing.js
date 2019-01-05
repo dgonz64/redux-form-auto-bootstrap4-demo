@@ -15,24 +15,28 @@ export const NAME = 'editing'
 
 const initialCode =
 `const pet = new Schema('pet', {
-	name: {
-		type: String,
-		error: {
-			max: 4
-		}
-	}
+  name: {
+    type: String,
+    error: {
+      max: 4
+    }
+  },
+  type: {
+    type: 'select',
+    options: ['dog', 'cat']
+  }
 });
 
 return new Schema('owner', {
-	name: {
-		type: 'string',
-		required: true
-	},
-	pets: {
-		type: [pet],
-		minChildren: 1,
-		maxChildren: 4
-	}
+  name: {
+    type: 'string',
+    required: true
+  },
+  pets: {
+    type: [pet],
+    minChildren: 1,
+    maxChildren: 4
+  }
 });`
 
 const initial = {
