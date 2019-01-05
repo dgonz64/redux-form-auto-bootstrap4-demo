@@ -8,7 +8,7 @@ const parts = require('./webpack.parts.babel')
 const root = process.cwd()
 const PATHS = {
   app: path.join(root, 'src'),
-  build: path.join(root, 'demo')
+  build: path.join(root, 'docs', 'demo')
 }
 
 const commonConfig = merge([
@@ -107,8 +107,7 @@ const developmentConfig = merge([
   parts.generateSourceMaps({ type: 'inline-source-map' }),
   parts.devServer({
     host: process.env.HOST,
-    port: process.env.PORT,
-    index: 'demo.html'
+    port: process.env.PORT
   }),
   parts.loadCSS(),
   parts.loadImages()
