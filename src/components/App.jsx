@@ -68,7 +68,7 @@ class AppBase extends Component {
                 theme="github"
                 onChange={handleChange.bind(null, changeCode)}
                 value={code}
-                width="90%"
+                width="100%"
                 name="editor"
               />
               <p><small>
@@ -97,7 +97,7 @@ class AppBase extends Component {
                 ref={element => this.sampleElement = element} 
               />
             </Panel>
-            <Panel header="Generated form" panelType="primary">
+            <Panel header="Generated form" borderType="primary">
               <DemoForm code={code} config={config} />
             </Panel>
           </div>

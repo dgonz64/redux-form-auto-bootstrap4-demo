@@ -18,8 +18,14 @@ const initialCode =
   name: {
     type: String,
     error: {
+      max: 8
+    },
+    warning: {
       max: 4
     }
+  },
+  heads: {
+    type: Number
   },
   type: {
     type: 'select',
@@ -30,7 +36,23 @@ const initialCode =
 return new Schema('owner', {
   name: {
     type: 'string',
-    required: true
+    required: true,
+  },
+  height: {
+    type: 'radios',
+    options: ['tall', 'short'],
+    error: {
+      // Retrurn translatable
+      validation: value => value == 'tall' ?
+        translatable('nohat') : false
+    }
+  },
+  usesHat: {
+    type: 'boolean',
+    error: {
+      // Return direct string
+      validation: value => value ? 'No hats, sorry.' : false
+    }
   },
   pets: {
     type: [pet],
