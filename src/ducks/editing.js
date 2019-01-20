@@ -44,7 +44,7 @@ return new Schema('owner', {
     error: {
       // Retrurn translatable
       validation: value => value == 'tall' ?
-        translatable('nohat') : false
+        translatable('notall') : false
     }
   },
   usesHat: {

@@ -29,7 +29,7 @@ addTranslations({
   warning: {
     max: 'Should be shorter than __max__ characters or it will not understand its name'
   },
-  nohat: 'Only short people are allowed to have pets'
+  notall: 'Only short people are allowed to have pets'
 })
 
 export const DemoForm = ({ code, config }) => {
